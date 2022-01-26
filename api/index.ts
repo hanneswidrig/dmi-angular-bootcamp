@@ -9,6 +9,10 @@ const port = 3000;
 const app = express();
 app.use(cors());
 
+app.get('/', (_, res) => {
+    return res.send('Welcome to the DMI Mock Weather API');
+});
+
 app.get('/summary', async (_, res) => {
     await db.read();
 
