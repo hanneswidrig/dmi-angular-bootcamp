@@ -4,7 +4,7 @@ import { dirname, join } from 'path';
 import { JSONFile, Low } from 'lowdb';
 import { rand, randBetweenDate, randNumber, randUuid } from '@ngneat/falso';
 
-import { Data, WeatherDetails, WeatherSummary } from './initialize-db-types';
+import { Data, WeatherDetails, WeatherSummary } from './initialize-db-types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const file = join(__dirname, 'db.json');

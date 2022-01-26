@@ -1,7 +1,7 @@
 import cors from 'cors';
 import express from 'express';
 
-import { db, initializeDatabase } from './initialize-db';
+import { db, initializeDatabase } from './initialize-db.js';
 
 await initializeDatabase();
 
