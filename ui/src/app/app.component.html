@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<header>
+    <mat-toolbar color="primary">
+        <button mat-button (click)="goToHome()">
+            <span>DMI Weather App</span>
+            <mat-icon aria-hidden="false" aria-label="thermostat icon">thermostat</mat-icon>
+        </button>
+    </mat-toolbar>
+</header>
+
+<main>
+    <router-outlet></router-outlet>
+</main>
+
+<footer></footer>
