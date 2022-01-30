@@ -1,9 +1,10 @@
 <header>
     <mat-toolbar color="primary">
-        <button mat-button (click)="goToHome()">
+        <button mat-button (click)="goToHome()" class="home-button">
             <span>DMI Weather App</span>
-            <mat-icon aria-hidden="false" aria-label="thermostat icon">thermostat</mat-icon>
+            <span class="iconify" data-icon="gg:thermostat"></span>
         </button>
+        <button mat-button *ngIf="backButtonVisible()" (click)="getPreviousRoute()">Back</button>
     </mat-toolbar>
 </header>
 

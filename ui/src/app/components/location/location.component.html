@@ -1,0 +1,25 @@
+<mat-card *ngIf="!isLoading; else loadingTemplate">
+    <mat-card-title>
+        <span>{{ weatherDetails.city }}</span>
+        <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(weatherDetails.description)"></span>
+    </mat-card-title>
+    <mat-card-subtitle>{{ weatherDetails.state }}</mat-card-subtitle>
+    <mat-card-content>
+        <div class="current-condition">
+            <div class="current-condition-label">Current Temperature</div>
+            <div class="current-condition-value">{{ weatherDetails.currentTemperature }} °F</div>
+        </div>
+        <div class="current-condition">
+            <div class="current-condition-label">Current Wind Speed</div>
+            <div class="current-condition-value">{{ weatherDetails.currentWindSpeed }} mph</div>
+        </div>
+        <div class="current-condition">
+            <div class="current-condition-label">Current Humidity</div>
+            <div class="current-condition-value">{{ weatherDetails.currentHumidity }}%</div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<ng-template #loadingTemplate>
+    <mat-spinner></mat-spinner>
+</ng-template>

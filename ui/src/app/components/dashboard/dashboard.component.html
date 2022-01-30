@@ -1,0 +1,30 @@
+<div *ngIf="!isLoading; else loadingTemplate" class="dashboard">
+    <mat-card *ngFor="let summary of weatherSummaries">
+        <mat-card-title>
+            <span>{{ summary.city }}</span>
+            <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(summary.description)"></span>
+        </mat-card-title>
+        <mat-card-subtitle>{{ summary.state }}</mat-card-subtitle>
+        <mat-card-content>
+            <div class="current-condition">
+                <div class="">Current Temperature</div>
+                <div class="current-condition-value">{{ summary.currentTemperature }} °F</div>
+            </div>
+            <div class="current-condition">
+                <div class="current-condition-label">Current Wind Speed</div>
+                <div class="current-condition-value">{{ summary.currentWindSpeed }} mph</div>
+            </div>
+            <div class="current-condition">
+                <div class="current-condition-label">Current Humidity</div>
+                <div class="current-condition-value">{{ summary.currentHumidity }}%</div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="goToWeatherDetails(summary)">View Details</button>
+        </mat-card-actions>
+    </mat-card>
+</div>
+
+<ng-template #loadingTemplate>
+    <mat-spinner></mat-spinner>
+</ng-template>
