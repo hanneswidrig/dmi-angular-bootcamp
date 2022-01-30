@@ -6,17 +6,17 @@
         </mat-card-title>
         <mat-card-subtitle>{{ summary.state }}</mat-card-subtitle>
         <mat-card-content>
-            <div class="current-condition">
-                <div class="">Current Temperature</div>
-                <div class="current-condition-value">{{ summary.currentTemperature }} °F</div>
+            <div class="data-line">
+                <span>Current Temperature</span>
+                <b class="data-line-value">{{ summary.currentTemperature }} °F</b>
             </div>
-            <div class="current-condition">
-                <div class="current-condition-label">Current Wind Speed</div>
-                <div class="current-condition-value">{{ summary.currentWindSpeed }} mph</div>
+            <div class="data-line">
+                <span>Current Wind Speed</span>
+                <b class="data-line-value">{{ summary.currentWindSpeed }} mph</b>
             </div>
-            <div class="current-condition">
-                <div class="current-condition-label">Current Humidity</div>
-                <div class="current-condition-value">{{ summary.currentHumidity }}%</div>
+            <div class="data-line">
+                <span>Current Humidity</span>
+                <b class="data-line-value">{{ summary.currentHumidity }}%</b>
             </div>
         </mat-card-content>
         <mat-card-actions>

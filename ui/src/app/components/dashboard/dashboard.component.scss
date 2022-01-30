@@ -15,15 +15,14 @@ mat-card-content.mat-card-content {
     gap: 0.5rem 0;
 }
 
-.current-condition {
+.data-line {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.current-condition-value {
-    font-weight: bold;
-    margin: 0 0.5rem;
+.data-line-value {
+    margin-left: 1rem;
 }
 
 @media (min-width: 48rem) {
