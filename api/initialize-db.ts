@@ -4,7 +4,7 @@ import { dirname, join } from 'path';
 import { JSONFile, Low } from 'lowdb';
 import { rand, randBetweenDate, randNumber, randUuid } from '@ngneat/falso';
 
-import { Data, WeatherDetails, WeatherSummary } from './initialize-db-types.js';
+import { ConditionDescriptions, Data, WeatherDetails, WeatherSummary } from './initialize-db.types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const file = join(__dirname, 'db.json');
@@ -23,10 +23,12 @@ export async function initializeDatabase(): Promise<void> {
         ['Seattle', 'WA'],
         ['Dallas', 'TX'],
         ['Miami', 'FL'],
+        ['Atlanta', 'GA'],
     ];
 
-    const weatherDescriptions: string[] = [
+    const weatherDescriptions: ConditionDescriptions[] = [
         'sunny',
+        'partly sunny',
         'mostly sunny',
         'partly cloudy',
         'mostly cloudy',
@@ -52,6 +54,7 @@ export async function initializeDatabase(): Promise<void> {
         currentTemperature: randNumber({ min: 55, max: 75 }),
         currentWindSpeed: randNumber({ min: 0, max: 25 }),
         currentHumidity: randNumber({ min: 25, max: 75 }),
+        description: rand(weatherDescriptions),
     }));
 
     const weatherDetails: WeatherDetails[] = weatherSummary.map((summary) => {
