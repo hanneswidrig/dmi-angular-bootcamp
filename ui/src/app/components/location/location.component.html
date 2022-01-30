@@ -1,24 +1,47 @@
-<mat-card *ngIf="!isLoading; else loadingTemplate">
-    <mat-card-title>
-        <span>{{ weatherDetails.city }}</span>
-        <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(weatherDetails.description)"></span>
-    </mat-card-title>
-    <mat-card-subtitle>{{ weatherDetails.state }}</mat-card-subtitle>
-    <mat-card-content>
-        <div class="current-condition">
-            <div class="current-condition-label">Current Temperature</div>
-            <div class="current-condition-value">{{ weatherDetails.currentTemperature }} °F</div>
-        </div>
-        <div class="current-condition">
-            <div class="current-condition-label">Current Wind Speed</div>
-            <div class="current-condition-value">{{ weatherDetails.currentWindSpeed }} mph</div>
-        </div>
-        <div class="current-condition">
-            <div class="current-condition-label">Current Humidity</div>
-            <div class="current-condition-value">{{ weatherDetails.currentHumidity }}%</div>
-        </div>
-    </mat-card-content>
-</mat-card>
+<ng-container *ngIf="!isLoading; else loadingTemplate">
+    <mat-card>
+        <mat-card-title>
+            <span>{{ weatherDetails.city }}</span>
+            <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(weatherDetails.description)"></span>
+        </mat-card-title>
+        <mat-card-subtitle>{{ weatherDetails.state }}</mat-card-subtitle>
+        <mat-card-content>
+            <div class="tile">
+                <span>Current Temperature</span><b>{{ weatherDetails.currentTemperature }} °F</b>
+            </div>
+            <div class="tile">
+                <span>Current Wind Speed</span><b>{{ weatherDetails.currentWindSpeed }} mph</b>
+            </div>
+            <div class="tile">
+                <span>Current Humidity</span><b>{{ weatherDetails.currentHumidity }}%</b>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+    <div class="forecast-container">
+        <mat-card *ngFor="let forecast of weatherDetails.forecast">
+            <mat-card-title>
+                <span>Day {{ forecast.day }}</span>
+                <span class="iconify-inline" [attr.data-icon]="currentConditionsIcon(forecast.description)"></span>
+            </mat-card-title>
+            <mat-card-subtitle></mat-card-subtitle>
+            <mat-card-content>
+                <div class="tile">
+                    <span>Max:</span><b>{{ forecast.maxTemperature }} °F</b>
+                </div>
+                <div class="tile">
+                    <span>Avg:</span><b>{{ forecast.avgTemperature }} °F</b>
+                </div>
+                <div class="tile">
+                    <span>Min:</span><b>{{ forecast.minTemperature }} °F</b>
+                </div>
+                <div class="tile">
+                    <span>Wind:</span><b>{{ forecast.windSpeed }} mph</b>
+                </div>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</ng-container>
 
 <ng-template #loadingTemplate>
     <mat-spinner></mat-spinner>

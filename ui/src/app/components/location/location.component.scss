@@ -2,11 +2,16 @@
     width: 100%;
 }
 
-mat-card.mat-card {
+.forecast-container {
     width: 100%;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
 }
 
 mat-card-title.mat-card-title {
+    font-size: 1.5rem;
     display: flex;
     justify-content: space-between;
 }
@@ -17,13 +22,8 @@ mat-card-content.mat-card-content {
     gap: 0.5rem 0;
 }
 
-.current-condition {
+.tile {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.current-condition-value {
-    font-weight: bold;
-    margin: 0 0.5rem;
 }

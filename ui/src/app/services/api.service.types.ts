@@ -1,6 +1,6 @@
 export interface DailyForecast {
     day: number;
-    description: string;
+    description: ConditionDescriptions;
     windSpeed: number;
     maxTemperature: number;
     avgTemperature: number;
