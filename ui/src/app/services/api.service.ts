@@ -9,10 +9,10 @@ export class ApiService {
     constructor(private httpClient: HttpClient) {}
 
     getWeatherSummary(): Observable<WeatherSummary[]> {
-        return this.httpClient.get<WeatherSummary[]>('http://localhost:3000/summary').pipe(delay(0));
+        return this.httpClient.get<WeatherSummary[]>('http://localhost:3000/summary').pipe(delay(750));
     }
 
     getWeatherDetailsByLocation(guid: string): Observable<WeatherDetails> {
-        return this.httpClient.get<WeatherDetails>(`http://localhost:3000/forecast/${guid}`).pipe(delay(0));
+        return this.httpClient.get<WeatherDetails>(`http://localhost:3000/forecast/${guid}`).pipe(delay(750));
     }
 }
