@@ -3,6 +3,11 @@
     margin: 0 1rem;
 }
 
+.spinner-container {
+    display: flex;
+    justify-content: center;
+}
+
 .forecast-container {
     width: 100%;
     gap: 1rem;
