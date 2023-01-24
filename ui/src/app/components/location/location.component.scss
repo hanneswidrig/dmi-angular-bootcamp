@@ -21,13 +21,17 @@
     min-width: 9rem;
 }
 
-mat-card-title.mat-card-title {
+mat-card {
+    padding: 1rem;
+}
+
+mat-card-title.mat-mdc-card-title {
     margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
 }
 
-mat-card-content.mat-card-content {
+mat-card-content.mat-mdc-card-content {
     display: flex;
     flex-direction: column;
     gap: 0.5rem 0;

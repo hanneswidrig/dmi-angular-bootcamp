@@ -4,15 +4,28 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-mat-card-title.mat-card-title {
+mat-card {
+    padding: 1rem;
+}
+
+mat-card-title.mat-mdc-card-title {
     display: flex;
     justify-content: space-between;
 }
 
-mat-card-content.mat-card-content {
+.mat-mdc-card-subtitle {
+    padding-bottom: 0.5rem;
+}
+
+mat-card-content.mat-mdc-card-content {
     display: flex;
     flex-direction: column;
     gap: 0.5rem 0;
+    padding: 0;
+}
+
+.mdc-card__actions {
+    padding: 0;
 }
 
 .data-line {
